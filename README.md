@@ -4,7 +4,7 @@
 
 ##To-do
 
-- [ ] Create a checklist 
+- [x] Create a checklist 
 - [ ] List some items on the checklist 
 
 
