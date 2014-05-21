@@ -1,5 +1,11 @@
 #Aerial Assist: Postseason
 
-Post Season code for Aerial Assist 
+###_Post Season code for Aerial Assist_ 
+
+##To-do
+
+- [ ] Create a checklist 
+- [ ] List some items on the checklist 
+
 
 -EVHS Robotics Programmers 
