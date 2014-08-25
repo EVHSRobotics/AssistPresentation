@@ -13,7 +13,7 @@ public class DriveCommand extends CommandBase {
     public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        
+        requires(driveTrain);
     }
 
     // Called just before this Command runs the first time

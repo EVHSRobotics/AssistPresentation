@@ -33,5 +33,66 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    Joystick controller = new Joystick(RobotMap.XBOX_CONTROLLER1);
+    public Joystick controller;
+    
+    public OI() {
+        controller = new Joystick(RobotMap.XBOX_CONTROLLER1);
+    }
+    
+    public Joystick getJoystick() {
+        return controller;
+    }
+    
+    //axes 
+    public double getLeftX(){
+        return controller.getRawAxis(1);
+    }
+    public double getLeftY(){
+        return controller.getRawAxis(2);
+    }
+    public double getRightX(){
+        return controller.getRawAxis(4);
+    }
+    public double getRightY(){
+        return controller.getRawAxis(5);
+    }
+    public double getTriggers() {
+        return controller.getRawAxis(3);
+    }
+    public double getDPad() {
+        return controller.getRawAxis(6);
+    }
+    
+    //buttons 
+     public boolean getA(){
+        return controller.getRawButton(1);
+    }
+    public boolean getB() {
+        return controller.getRawButton(2);
+    }
+    public boolean getX() {
+        return controller.getRawButton(3);
+    }
+    public boolean getY() {
+        return controller.getRawButton(4);
+    }
+    public boolean getLB() {
+        return controller.getRawButton(5);
+    }
+    public boolean getRB() {
+        return controller.getRawButton(6);
+    }
+    public boolean getBack() {
+        return controller.getRawButton(7);
+    }
+    public boolean getStart() {
+        return controller.getRawButton(8);
+    }
+    public boolean getLeftStickPress() {
+        return controller.getRawButton(9);
+    }
+    public boolean getRightStickPress() {
+        return controller.getRawButton(10);
+    }
+    
 }
