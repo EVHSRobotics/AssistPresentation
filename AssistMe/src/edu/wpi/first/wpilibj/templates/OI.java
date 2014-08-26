@@ -33,66 +33,110 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    public static class Id {
+
+        public static class Axis {
+
+            public static final int LEFT_X = 0x11;
+            public static final int LEFT_Y = 0x12;
+            public static final int RIGHT_X = 0x21;
+            public static final int RIGHT_Y = 0x22;
+            public static final int TRIGGERS = 0x31;
+            public static final int D_PAD = 0x41;
+        }
+
+        public static class Button {
+
+            public static final int A = 0x51;
+            public static final int B = 0x52;
+            public static final int X = 0x53;
+            public static final int Y = 0x54;
+            public static final int LB = 0x61;
+            public static final int RB = 0x62;
+            public static final int BACK = 0x71;
+            public static final int START = 0x72;
+            public static final int LEFT_STICK = 0x81;
+            public static final int RIGHT_STICK = 0x82;
+        }
+    }
     public Joystick controller;
-    
+
     public OI() {
         controller = new Joystick(RobotMap.XBOX_CONTROLLER1);
     }
-    
+
     public Joystick getJoystick() {
         return controller;
     }
-    
+
     //axes 
-    public double getLeftX(){
-        return controller.getRawAxis(1);
+    public double getAxis(int id) {
+        double value;
+        switch (id) {
+            case OI.Id.Axis.LEFT_X:
+                value = controller.getRawAxis(1);
+                break;
+            case OI.Id.Axis.LEFT_Y:
+                value = controller.getRawAxis(2);
+                break;
+            case OI.Id.Axis.RIGHT_X:
+                value = controller.getRawAxis(4);
+                break;
+            case OI.Id.Axis.RIGHT_Y:
+                value = controller.getRawAxis(5);
+                break;
+            case OI.Id.Axis.TRIGGERS:
+                value = controller.getRawAxis(3);
+                break;
+            case OI.Id.Axis.D_PAD:
+                value = controller.getRawAxis(6);
+                break;
+            default:
+                value = 0.0;
+                break;
+        }
+        return value;
     }
-    public double getLeftY(){
-        return controller.getRawAxis(2);
-    }
-    public double getRightX(){
-        return controller.getRawAxis(4);
-    }
-    public double getRightY(){
-        return controller.getRawAxis(5);
-    }
-    public double getTriggers() {
-        return controller.getRawAxis(3);
-    }
-    public double getDPad() {
-        return controller.getRawAxis(6);
-    }
-    
     //buttons 
-     public boolean getA(){
-        return controller.getRawButton(1);
+
+    public boolean getButton(int id) {
+        boolean value;
+        switch (id) {
+            case OI.Id.Button.A:
+                value = controller.getRawButton(1);
+                break;
+            case OI.Id.Button.B:
+                value = controller.getRawButton(2);
+                break;
+            case OI.Id.Button.X:
+                value = controller.getRawButton(3);
+                break;
+            case OI.Id.Button.Y:
+                value = controller.getRawButton(4);
+                break;
+            case OI.Id.Button.LB:
+                value = controller.getRawButton(5);
+                break;
+            case OI.Id.Button.RB:
+                value = controller.getRawButton(6);
+                break;
+            case OI.Id.Button.BACK:
+                value = controller.getRawButton(7);
+                break;
+            case OI.Id.Button.START:
+                value = controller.getRawButton(8);
+                break;
+            case OI.Id.Button.LEFT_STICK:
+                value = controller.getRawButton(9);
+                break;
+            case OI.Id.Button.RIGHT_STICK:
+                value = controller.getRawButton(10);
+                break;
+            default:
+                value = false;
+                break;
+        }
+        return value;
     }
-    public boolean getB() {
-        return controller.getRawButton(2);
-    }
-    public boolean getX() {
-        return controller.getRawButton(3);
-    }
-    public boolean getY() {
-        return controller.getRawButton(4);
-    }
-    public boolean getLB() {
-        return controller.getRawButton(5);
-    }
-    public boolean getRB() {
-        return controller.getRawButton(6);
-    }
-    public boolean getBack() {
-        return controller.getRawButton(7);
-    }
-    public boolean getStart() {
-        return controller.getRawButton(8);
-    }
-    public boolean getLeftStickPress() {
-        return controller.getRawButton(9);
-    }
-    public boolean getRightStickPress() {
-        return controller.getRawButton(10);
-    }
-    
+
 }
