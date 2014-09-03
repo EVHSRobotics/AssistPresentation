@@ -28,16 +28,16 @@ public class ShootCommand extends CommandBase {
         if (oi.getButton(OI.Id.Button.RB)) {
             shooter.shoot(1);
         } else if (oi.getButton(OI.Id.Button.LB)) {
-            shooter.shoot(-0.5);
+            shooter.shoot(-1);
         } else {
             shooter.shoot(0);
         }
         
         //trigger 
         if(oi.getButton(OI.Id.Button.A)) {
-            shooter.trigger(0.5);
+            shooter.trigger(1);
         } else if(oi.getButton(OI.Id.Button.B)) {
-            shooter.trigger(-0.5);
+            shooter.trigger(-1);
         } else {
             shooter.trigger(0);
         }

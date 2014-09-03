@@ -23,7 +23,7 @@ public class Shooter extends Subsystem {
     
     public Shooter() {
         shootMLeft = new Jaguar(RobotMap.SHOOT_MOTOR_LEFT); 
-        shootMRight = new Jaguar(RobotMap.SHOOT_MOTOR_RIGHT);
+        shootMRight = new Jaguar(RobotMap.SHOOT_MOTOR_RIGHT); //flip wires
         triggerM = new Jaguar(RobotMap.TRIGGER_MOTOR);
     }
 
@@ -35,7 +35,7 @@ public class Shooter extends Subsystem {
     
     public void shoot(double speed) {
         shootMLeft.set(speed);
-        shootMRight.set(-speed);
+        shootMRight.set(speed); //cause wires flipped
     }
     
     public void trigger(double speed) {

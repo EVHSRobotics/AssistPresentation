@@ -12,6 +12,6 @@ public class RobotMap {
     
     //shoot motors 
     public static final int SHOOT_MOTOR_LEFT = 6;
-    public static final int SHOOT_MOTOR_RIGHT = 4;
-    public static final int TRIGGER_MOTOR = 3;
+    public static final int SHOOT_MOTOR_RIGHT = 3;
+    public static final int TRIGGER_MOTOR = 4;
 }
